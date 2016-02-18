@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=LogAnalyzer()
+comment0.text=\r\n\ Create\ an\ object\ to\ analyze\ hourly\ web\ accesses.\r\n
+comment1.params=
+comment1.target=void\ analyzeHourlyData()
+comment1.text=\r\n\ Analyze\ the\ hourly\ access\ data\ from\ the\ log\ file.\r\n
+comment2.params=
+comment2.target=void\ printHourlyCounts()
+comment2.text=\ \ \ \ \ \ \r\n\ Print\ the\ hourly\ counts.\ \ \ \ \ \ \r\n\ These\ should\ have\ been\ set\ with\ a\ prior\ \ \ \ \ \ \r\n\ call\ to\ analyzeHourlyData.\ \ \ \ \ \r\n
+comment3.params=
+comment3.target=void\ printData()
+comment3.text=\r\n\ Print\ the\ lines\ of\ data\ read\ by\ the\ LogfileReader\r\n
+comment4.params=
+comment4.target=int\ numberOfAccesses()
+comment4.text=\ \ \ \ \ \ \r\n\ Return\ the\ number\ of\ accesses\ recorded\ in\ the\ log\ file\ \ \ \ \ \ \r\n
+comment5.params=
+comment5.target=int\ busiestHour()
+comment5.text=\ \ \ \ \ \ \r\n\ Return\ the\ busiest\ hour\ of\ day\ \ \ \ \ \ \r\n
+comment6.params=
+comment6.target=int\ busiestTwoHourPeriod()
+comment6.text=\r\n\ Return\ the\ two-hour\ period\ which\ is\ busiest.\r\n
+numComments=7
