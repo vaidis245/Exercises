@@ -25,7 +25,7 @@ public class LogAnalyzer
     }
 
     /**
- * Return the two-hour period which is busiest.
+ * Return the busiest period of two hours
  */
  public int busiestTwoHourPeriod()
  {
