@@ -25,24 +25,6 @@ public class LogAnalyzer
     }
 
     /**
- * Return the busiest period of two hours
- */
- public int busiestTwoHourPeriod()
- {
- int busiestPeriod = 0;
- int busiestPeriodCount = 0;
- for(int hour = 0; hour < hourCounts.length-1; hour++) {
- int periodCount = hourCounts[hour] + hourCounts[hour+1];
- if(periodCount > busiestPeriodCount) {
- busiestPeriod = hour;
- busiestPeriodCount = periodCount;
- }
- }
- return busiestPeriod;
- } 
-
-
-    /**
      * Analyze the hourly access data from the log file.
      */
     public void analyzeHourlyData()
@@ -54,21 +36,21 @@ public class LogAnalyzer
         }
     }
 
-    /**
-     * Print the hourly counts.
-     * These should have been set with a prior
-     * call to analyzeHourlyData.
-     */
-    public void printHourlyCounts()
-    {
-        System.out.println("Hr: Count");
-        for(int hour = 0; hour < hourCounts.length; hour++) {
-            System.out.println(hour + ": " + hourCounts[hour]);
-        }
-    }
-    
-    
-    
+    /**      
+     * Print the hourly counts.      
+     * These should have been set with a prior      
+     * call to analyzeHourlyData.     
+     */     
+    public void printHourlyCounts()     
+    {         
+        System.out.println("Hr: Count");         
+        int hour = 0;         
+        while(hour < hourCounts.length) {             
+            System.out.println(hour + ": " + hourCounts[hour]);             
+            hour++;         
+        }    
+    } 
+
     /**
      * Print the lines of data read by the LogfileReader
      */
@@ -76,4 +58,52 @@ public class LogAnalyzer
     {
         reader.printData();
     }
-}
+
+        /**      
+     * Return the number of accesses recorded in the log file      
+     */     
+    public int numberOfAccesses()     
+    {         
+        int total = 0;         
+        // Add the value in each element of hourCounts to total.         
+        for(int hourCount : hourCounts) 
+        {             
+            total = total + hourCount;             
+        }         
+        return total;     
+    }
+    
+     /**      
+      * Return the busiest hour of day      
+      */      
+     public int busiestHour()     
+     {         
+         int busiestHour = 0;        
+         for(int hour = 1; hour < hourCounts.length; hour++) 
+         {             
+             if(hourCounts[hour] > hourCounts[busiestHour]) 
+             {                 
+                 busiestHour = hour;             
+                }         
+            }         
+            return busiestHour;     
+        } 
+        
+    /**
+     * Return the two-hour period which is busiest.
+     */
+    public int busiestTwoHourPeriod()
+    {
+        int busiestPeriod = 0;
+        int busiestPeriodCount = 0;
+        for(int hour = 0; hour < hourCounts.length-1; hour++) {
+            int periodCount = hourCounts[hour] + hourCounts[hour+1];
+            if(periodCount > busiestPeriodCount) {
+                busiestPeriod = hour;
+                busiestPeriodCount = periodCount;
+            }
+        }
+        return busiestPeriod;
+    } 
+
+    }
