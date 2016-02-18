@@ -76,9 +76,7 @@ public class ClockDisplay
     /**
      * Update the internal string that represents the display.
      */
- /**
-     * Update the internal string that represents the display.
-     */
+     
     private void updateDisplay()
     {
     int hour = hours.getValue(); 	
